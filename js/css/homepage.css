@@ -1,0 +1,236 @@
+
+  .carousel-item img {
+    /* height: 100vh; */
+    width: 100%;
+    object-fit: cover;
+  }
+.carousel-indicators.custom-dots {
+  bottom: 20px;
+  justify-content: center;
+}
+
+.carousel-indicators.custom-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 6px;
+  opacity: 1;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Dot 1: Red */
+.carousel-indicators.custom-dots button:nth-child(1) {
+  background-color: #d41e26;
+}
+
+/* Dot 2: Blue */
+.carousel-indicators.custom-dots button:nth-child(2) {
+  background-color: #336eb1;
+}
+
+/* Active dot glow */
+.carousel-indicators.custom-dots .active {
+  box-shadow: 0 0 0 3px #fff;
+}
+
+ @media (max-width: 768px) {
+    .carousel-item img {
+      height: auto !important;
+    }
+    .carousel-indicators.custom-dots {
+    bottom: -34px;
+    justify-content: center;
+}
+  }
+   .scroll-animate-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+  }
+
+  /* Visible state */
+  .scroll-animate-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Optional: Style for card */
+  .property-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+   .marka-text{
+        font-size: 40px;
+    }
+     .section-title {
+     
+        border-left: 5px solid #336eb1;
+      padding-left: 15px;
+    }
+     .rotate-label {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-align: center;
+      font-size: 14px;
+      color: #d41e26;
+
+    }
+    .heading-main {
+      font-size: 31px;
+      font-weight: 500;
+    }
+    .desc {
+      font-size: 16px;
+      color: #333;
+    }
+    .link-custom {
+      color: #023E7D;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .link-custom:hover {
+      text-decoration: underline;
+    }
+    .intro-text{
+    font-size: 24px;
+    line-height: 1.2em;
+    color: #262323;
+    }
+    .border-row {
+      border-bottom: 1px solid #ddd;
+      padding: 40px 0;
+    }
+    @media (max-width: 767px) {
+      .rotate-label {
+        writing-mode: horizontal-tb;
+        transform: none;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      .heading-main {
+        font-size: 28px;
+      }
+        .border-row {
+      border-bottom: 1px solid #ddd;
+      padding: 0px 0px 20px;
+    }
+      .markareverse{
+        flex-direction: column-reverse;
+      }
+    }
+
+ .property-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 30px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Dark overlay */
+.property-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* On hover: image becomes clearer */
+.property-card:hover::before {
+  opacity: 0.2;
+}
+
+/* Text container */
+.property-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 15px;
+  border-radius: 5px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+/* On hover: text background becomes visible */
+.property-card:hover .property-card-content {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.property-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fdd835;
+  text-transform: uppercase;
+}
+
+.property-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.property-desc {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #ddd;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ✅ Mobile Responsive Styles */
+@media (max-width: 767px) {
+  .property-card {
+    height: auto;
+    padding: 20px;
+  }
+
+  .property-card::before {
+    opacity: 0.2 !important;
+  }
+
+  .property-card-content {
+    background: rgba(0, 0, 0, 0.5) !important;
+  }
+
+
+
+  .property-title {
+    font-size: 18px;
+  }
+
+  .property-desc {
+    font-size: 13px;
+  }
+
+  .property-label {
+    font-size: 11px;
+  }
+}
+
+    .scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
