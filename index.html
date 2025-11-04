@@ -88,10 +88,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <style>
               .amenities-specialty, .project-challenge {
-    margin-top: 21px;
-              }
+    margin-top: 1px;
+    }
  .section-title {
-    margin-bottom: 40px;
+    margin-bottom: 19px;
     margin-top: 17px;
 }
         .project-challenge h2 {
@@ -105,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 20px 15px;
       /* border-radius: 50px; */
       max-width: 900px;
-      margin: 50px auto 30px;
+      margin: 22px auto 30px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       position: relative;
     }
@@ -173,7 +173,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin: 0;
       transition: color 0.3s ease;
     }
-
+.amenities-specialty, .project-challenge p {
+    /* margin-top: 21px; */
+    margin-bottom: 10px;
+}
     .step.active p {
       color: #1ea4ec;
       font-weight: 600;
@@ -462,7 +465,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                          <div class="section-title">
                         <h2 class="text-anime-style-2" data-cursor="-opaque">Our <span>Home Loan & Real Estate</span> Services</h2>
-                         
+                         </div>
                           <!-- Project Challenge Start -->
                             <div class="project-challenge">
                                 <h2 class="text-anime-style-2">Home Loan Assistance</h2>
@@ -621,6 +624,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <!-- Project Challenge End -->
                            <p>With ADVP Business Ventures Private Limited, you can be assured of clear titles, legal accuracy, and stress-free property ownership.</p>
+                          </div>
                            <div class="section-title">
                         <h2 class="text-anime-style-2" data-cursor="-opaque">Our Work <span>Process</span></h2>
                           <p>Our 6-step process ensures a smooth journey from property discovery to loan approval and final registration.</p>
@@ -690,12 +694,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-
+</div>
   
  
-                    <div class="section-title">
+                     <div class="section-title">
                         <h2 class="text-anime-style-2" data-cursor="-opaque">Why Choose <span>ADVP Business Ventures Private Limited?</span></h2>
-                    </div>                    
+                         </div>                  
                     <div class="project-image-list">
                         <div class="col-lg-12">
                                    
@@ -714,16 +718,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                            
                       </div>     
                            
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                       </div>
-                        <!-- Our Faq Content Start -->
+                    <!-- Our Faq Content Start -->
                         <div class="our-faq-content page-faq-section">
                             <!-- Section Title Start -->
                             <div class="section-title">
@@ -1012,6 +1007,44 @@ span.markagst {
     <script src="js/wow.min.js" defer></script>
     <!-- Main Custom js file -->
     <script src="js/function.js" defer></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
