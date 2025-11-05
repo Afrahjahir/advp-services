@@ -2485,7 +2485,8 @@ header.main-header .header-sticky.active {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 30px
+    gap: 30px;
+    padding: 37px 0px 0px 0px;
 }
 
 .project-entry-list,.project-video-image {
@@ -4068,4 +4069,9 @@ span.markagst {
         text-align: center;
         font-size: 12px
     }
+    .tab-content {
+    background: #023E7D;
+    border-radius: 0px;
+  
+}
 }
