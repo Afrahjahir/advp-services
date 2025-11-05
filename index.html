@@ -87,14 +87,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <body>
 
     <style>
-              .amenities-specialty, .project-challenge {
-    margin-top: 1px;
-    }
- .section-title {
-    margin-bottom: 19px;
-    margin-top: 17px;
-}
-        .project-challenge h2 {
+
+     .project-challenge h2 {
     font-size: 27px;
     text-transform: capitalize;
     margin-bottom: 10px;
@@ -105,7 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 20px 15px;
       /* border-radius: 50px; */
       max-width: 900px;
-      margin: 22px auto 30px;
+      margin: 50px auto 30px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       position: relative;
     }
@@ -173,10 +167,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin: 0;
       transition: color 0.3s ease;
     }
-.amenities-specialty, .project-challenge p {
-    /* margin-top: 21px; */
-    margin-bottom: 10px;
-}
+
     .step.active p {
       color: #1ea4ec;
       font-weight: 600;
@@ -241,6 +232,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .project-entry-list.wow.fadeInUp.marka_list {
     width: 100%;
 }
+.amenities-specialty, .project-challenge {
+    margin-top: 1px;
+    }
+ .section-title {
+    margin-bottom: 19px;
+    margin-top: 17px;
+}
 
     /* --- Responsive --- */
     @media (max-width: 768px) {
@@ -260,6 +258,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         display: flex;
         align-items: center;
         gap: 10px;
+        justify-content: space-around;
+        flex-direction: row-reverse;
       }
 
       .step::before {
@@ -274,8 +274,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .tab-content {
         padding: 20px;
       }
+      .project-image-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    padding: 0px 0px 0px 0px;
+}
     }
   </style>
+
     <!-- Preloader Start -->
 	<!-- <div class="preloader">
 		<div class="loading-container">
