@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://advpbusinessventures.com/sitemap.xml

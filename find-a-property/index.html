@@ -74,30 +74,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-FY7VCTJEBS');
 </script>
-<style>
-          span.markagst {
-    padding: 10px;
-}
-.markaleft {
-    width: 28%;
-}
-    @media screen and (max-width:768px){
-	.markaleft{
-		display:none
-	}
-  span.markagst {
-	display:block;
-	padding: 0px;
-}
-}
-  </style>
-         <style>
+
+        <style>
             @media screen and (max-width:768px){
 	.markaleft{
 		display:none
 	}
 }
-    </style>
+.about-us {
+    background: url(../images/about-us-bg.svg);
+    background-position: right center;
+    background-size: auto;
+    padding: 64px 0 80px;
+    background-repeat: no-repeat;
+}
+     .section-title {
+     
+      border-left: 5px solid #336eb1;
+      padding-left: 15px;
+    }
+    span.markagst {
+    padding: 10px;
+}
+@media screen and (max-width:768px) {
+span.markagst {
+	display:block;
+	padding: 0px;
+}
+
+.markafooter {
+    text-align: center;
+    font-size: 10px;
+}
+}
+        </style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -180,23 +190,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Top Bar -->
 <div class="topbar">
   <div class="container">
-    <div class="row align-items-center justify-content-between text-white">
-      
-     <!-- Left: Email -->
-      <div class="col-md-auto mb-2 mb-md-0 markaleft">
-        <i class="fas fa-envelope"></i> <a href="mailto:info@advpbusinessventures.com" style="color:#fff">info@advpbusinessventures.com</a>
+    <div class="topbar-wrapper">
+
+      <!-- Left -->
+      <div class="top-left markaleft">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:info@advpbusinessventures.com">info@advpbusinessventures.com</a>
       </div>
 
-      <!-- Middle: GST Info -->
-      <div class="col-md text-center mb-2 mb-md-0">
-     <span class="markagst">Karnataka GST: <strong>29AAYCA5471A1ZD</strong></span>
-     <span class="markagst">Tamil Nadu GST: <strong>33AAYCA5471A1ZO</strong></span>
+      <!-- Center -->
+      <div class="top-center">
+        <span>CIN : <strong>U43299KA2023PTC172498</strong></span>
+        <span>Karnataka GST: <strong>29AAYCA5471A1ZD</strong></span>
+        <span>Tamil Nadu GST: <strong>33AAYCA5471A1ZO</strong></span>
       </div>
 
-      <!-- Right: Phone and Address -->
-      <div class="col-md-auto text-md-end markaleft">
-        <i class="fas fa-phone-alt"></i><a href="tel:917200358161" style="color:#fff">+91 72003 58161</a> &nbsp; | &nbsp;
-      <i class="fas fa-phone-alt"></i> <a href="tel:917353511919" style="color:#fff">+91 73535 11919 </a>
+      <!-- Right -->
+      <div class="top-right markaleft">
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:917200358161">+91 72003 58161</a>
+
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:917353511919">+91 73535 11919</a>
       </div>
 
     </div>

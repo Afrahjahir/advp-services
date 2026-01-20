@@ -26,6 +26,7 @@
 	<link href="css/all.min.css" rel="stylesheet" media="screen">
 	<!-- Animated Css -->
 	<link href="css/animate.css" rel="stylesheet">
+  	<link href="css/stylehome.css" rel="stylesheet">
     <!-- Magnific Popup Core Css File -->
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<!-- Mouse Cursor Css File -->
@@ -292,7 +293,6 @@ span.markagst {
 <body>
 
 <!-- Popup Modal -->
-<!-- Popup Modal -->
 <div id="contactPopup">
   <div id="popupContent">
     <!-- Close button -->
@@ -427,6 +427,7 @@ span.markagst {
 
       <!-- Center -->
       <div class="top-center">
+         <span>CIN : <strong>U43299KA2023PTC172498</strong></span>
         <span>Karnataka GST: <strong>29AAYCA5471A1ZD</strong></span>
         <span>Tamil Nadu GST: <strong>33AAYCA5471A1ZO</strong></span>
       </div>
@@ -521,295 +522,124 @@ span.markagst {
   <a href="#">Contact Us</a>
 </div> -->
 
-<!-- Hero Section with Video Only -->
+<!-- Hero Section with Video -->
 <section class="hero-section">
   <video autoplay muted loop playsinline class="hero-video">
     <source src="/images/Advpimages/advp banner video.mp4" type="video/mp4">
-   
   </video>
 </section>
 
-<style>
-/* ===== Hero Section ===== */
-.hero-section {
-  position: relative;
-  width: 100%;
-  height: 80vh; /* Full screen */
-  overflow: hidden;
-}
+<!-- Counting Section (Hero KEELA THANIYA) -->
+<section class="counting-section">
+  <div class="count-container">
 
-/* Video Background */
-.hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: fill; /* Cover entire hero */
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
+    <!-- 1st box - Text -->
+    <div class="count-box text-box">
+      <p>
+        Build Your Dream Home in the Land of Prosperity
+      </p>
+    </div>
 
-/* Optional: for mobile, ensure height fits smaller screens */
-@media (max-width: 768px) {
-  .hero-section {
-    height: 20vh;
+    <!-- 2nd box -->
+    <div class="count-box">
+      <h3><span class="counter" data-target="180">100</span>+</h3>
+      <p>Premium Residential Units</p>
+    </div>
+
+    <!-- 3rd box -->
+    <div class="count-box">
+      <h3><span class="counter" data-target="10">10</span>+ Acres</h3>
+      <p>Spacious & Well-Planned Development</p>
+    </div>
+
+    <!-- 4th box -->
+    <div class="count-box">
+      <h3><span class="counter" data-target="80">80</span>% Bank Lonas</h3>
+      <p>Easy Financing Available</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<script>
+const counters = document.querySelectorAll('.counter');
+
+const animateCounter = counter => {
+  const target = +counter.dataset.target;
+  let count = 0;
+  const speed = target / 120;
+
+  const update = () => {
+    count += speed;
+    if (count < target) {
+      counter.innerText = Math.ceil(count);
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  update();
+};
+
+const observer = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    counters.forEach(counter => animateCounter(counter));
+    observer.disconnect();
   }
-  .hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cover entire hero */
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
+});
 
-}
+observer.observe(document.querySelector('.counting-overlay'));
+</script>
 
-@media (max-width: 480px) {
-  .hero-section {
-    height: 22vh;
-  }
-}
-</style>
+<section class="overview-section">
+  <div class="overview-container">
 
+    <!-- LEFT SIDE (ALL CONTENT SCROLLS) -->
+    <div class="overview-left">
 
+      <!-- OVERVIEW -->
+   <div class="section-title marka">
+          <h3>About Us </h3>
+          <h2> Where Investment Meets Lifestyle  <br> - <span> ADVP Business Ventures</span></h2>
+        </div>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHXB95HK"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<!-- About Us Section Start -->
-<div class="about-us">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-12">
+      <div class="left-grid">
+        <div class="left-image">
+          <img src="/images/South-Indias-2.png">
+        </div>
 
-        <!-- About Us Content -->
-        <div class="about-us-content" id="about">
+        <div class="left-text">
+          <p class="location">📍 Bangalore & Chennai</p>
 
-          <!-- What We Do Section -->
-          <div class="py5">
-            <div class="row markareverse" >
-              <div class="col-md-3 text-center col-lg-4 scroll-animate">
-                <img src="images/Advpimages/About_Us_Section-ADVP.webp" alt="What We Do Icon" class="img-fluid mb-3" loading="lazy">
-              </div>
-
-              <div class="col-md-9 col-lg-8">
-
-                <!-- Item 1 -->
-                <div class="row align-items-center border-row mb-4 scroll-animate">
-                  <div class="col-12 col-md-1 rotate-label">About Us</div>
-                  <div class="col-12 col-md-6">
-                    <h3 class="heading-main" style="text-transform: capitalize;">Expert guidance. Property deals. Guaranteed satisfaction</h3>
-                  </div>
-                  <div class="col-12 col-md-5">
-                    <p class="desc">
-                      We offer expert real estate solutions—from buying and selling to leasing and investment—delivering trusted service and guaranteed satisfaction with every property transaction.
-                    </p>
-                    <a href="/about/" class="link-custom">Read More</a>
-                  </div>
-                </div>
-
-               
-
-                <!-- Item 3 -->
-                <div class="row align-items-center border-row scroll-animate" style="border-bottom:none">
-                  <div class="col-12 col-md-1 rotate-label">Contact Us</div>
-                  <div class="col-12 col-md-6">
-                    <h3 class="heading-main" >Let’s talk. Your needs, our priority. - Click to fill the form</h3>
-                  </div>
-                  <div class="col-12 col-md-5">
-                    <p class="desc">
-                     our experts will connect with you to assist your every real estate requirement.
-                    </p>
-                    <a href="/contact/" class="link-custom">Get in Touch</a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+          <div class="info-cards">
+            <div class="info-card"><p>Approved</p><h3>DTCP & RERA</h3></div>
+            <div class="info-card"><p>Area</p><h3>640 – 2400 sq.ft</h3></div>
+            <div class="info-card"><p>Price</p><h3>29 Lakhs*</h3></div>
           </div>
 
+          <p class="desc">
+        ADVP is a leading O2O (Online-to-Offline) second landlord platform based in Bangalore. As a trusted prop tech company, we specialize in professional management of housing asset for individual apartments, villas, and houses.
+
+Since our incorporation fromApril 2023, we have grown steadily to manage over 100+ residential real estate properties. Our platform proudly serves clients in maintaining their property and providing hassle free transactions, emphasizing our dedication to client satisfaction and building trust.
+          </p>
+
+          <div class="btn-group">
+            <a class="gold-btn" href="#">Read More</a>
+            <!-- <a class="gold-btn">⬇ Master Layout</a> -->
+          </div>
         </div>
-        <!-- About Us Content End -->
-
       </div>
-    </div>
-  </div>
-</div>
-<!-- About Us Section End -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll('.scroll-animate');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        } else {
-          entry.target.classList.remove('visible');
-        }
-      });
-    }, {
-      threshold: 0.2
-    });
+      <!-- OUR SERVICES (LEFT SIDE ONLY) -->
+      <div class="services-wrapper">
+        <div class="section-title">
+          <h3>Our Services</h3>
+          <h2>We offer <span>real estate solutions</span></h2>
+        </div>
 
-    elements.forEach(el => observer.observe(el));
-  });
-</script>
-<style>
-  /* ===== Flip Section ===== */
-.flip-section {
-  padding: 60px 0;
-}
-
-/* ===== Full-width Grid ===== */
-.flip-section .container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0 30px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-/* ===== Flip Box ===== */
-.flip-box {
-  perspective: 1000px;
-  width: 100%;
-  cursor: pointer;
-}
-
-/* ===== Inner (SIZE LOCKED → no movement) ===== */
-.flip-inner {
-  position: relative;
-  width: 100%;
-  height: 320px;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-}
-
-/* Desktop hover */
-@media (hover: hover) {
-  .flip-box:hover .flip-inner {
-    transform: rotateY(180deg);
-  }
-}
-
-/* Mobile tap */
-.flip-box.active .flip-inner {
-  transform: rotateY(180deg);
-}
-
-/* ===== Front & Back ===== */
-.flip-front,
-.flip-back {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-/* ===== Front ===== */
-.flip-front {
-  position: relative;
-}
-
-.flip-front img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Overlay */
-.flip-front::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 1;
-}
-
-/* Center content */
-.front-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
-  color: #fff;
-}
-
-/* Icon image */
-.front-icon {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 12px;
-  filter: brightness(0) invert(1);
-}
-
-/* Title */
-.front-content h3 {
-  font-size: 22px;
-  margin: 0;
-}
-
-/* ===== Back ===== */
-.flip-back {
-  background: #bc3734;
-  color: #fff;
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
-  text-align: center;
-}
-img.front-icon.marka_image1 {
-    height: 20px;
-    width: 20px;
-}
-
-/* ===== Tablet ===== */
-@media (max-width: 900px) {
-  .flip-section .container {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 20px;
-  }
-}
-
-/* ===== Mobile ===== */
-@media (max-width: 600px) {
-  .flip-section .container {
-    grid-template-columns: 1fr;
-    padding: 0 15px;
-  }
-
-  .flip-inner {
-    height: 260px;
-  }
-}
-</style>
-
-<div class="row section-row">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                          <h3 class="wow fadeInUp">Our services</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">we offer a comprehensive suite of  <span>real estate solutions</span>, including:</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-<section class="flip-section">
+      <section class="flip-section">
   <div class="container">
      
 
@@ -909,17 +739,144 @@ img.front-icon.marka_image1 {
 
   </div>
 </section>
+<section class="project-gallery-section">
+  <div class="gallery-left">
+    <!-- Title -->
+   <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                          <!-- <h3 class="wow fadeInUp">Gallery</h3> -->
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">Gallery</span></h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
 
+    <!-- Tabs -->
+    <div class="gallery-tabs">
+      <button class="tab-btn active" data-tab="photos">Photos</button>
+      <button class="tab-btn" data-tab="videos">Videos</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="gallery-content">
+
+      <!-- PHOTOS -->
+      <div class="tab-content active" id="photos">
+        <div class="gallery-grid">
+          <div class="gallery-card"><img src="/images/property/1st%20floor/image3.jpg" alt=""></div>
+          <div class="gallery-card"><img src="/images/property/1st%20floor/image2.jpg" alt=""></div>
+          <div class="gallery-card"><img src="/images/property/1st%20floor/image3.jpg" alt=""></div>
+          <!-- <div class="gallery-card"><img src="/images/property/1st%20floor/image5.jpg" alt=""></div>
+          <div class="gallery-card"><img src="/images/property/1st%20floor/image6.jpg" alt=""></div> -->
+        </div>
+      </div>
+
+      <!-- VIDEOS -->
+     <!-- VIDEOS -->
+<div class="tab-content" id="videos">
+  <div class="gallery-grid">
+    <div class="gallery-card video-card">
+     <iframe width="356" height="634" src="https://www.youtube.com/embed/REEAULnhzeo" title="3BHK East Facing Home for Sale in Electronic City, Bangalore" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <!-- <span class="more-videos">MORE VIDEOS</span> -->
+    </div>
+
+    <div class="gallery-card video-card">
+     <iframe width="356" height="634" src="https://www.youtube.com/embed/znaZeOiP8Vw" title="Property for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <!-- <span class="more-videos">MORE VIDEOS</span> -->
+    </div>
+
+    <div class="gallery-card video-card">
+   <iframe width="356" height="634" src="https://www.youtube.com/embed/LucntLwRZXI" title="Property management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <!-- <span class="more-videos">MORE VIDEOS</span> -->
+    </div>
+
+    
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
 <script>
-/* Mobile tap flip */
-document.querySelectorAll('.flip-box').forEach(box => {
-  box.addEventListener('click', () => {
-    box.classList.toggle('active');
+
+const gallerySections = document.querySelectorAll('.project-gallery-section');
+
+gallerySections.forEach(gallerySection => {
+  const tabBtns = gallerySection.querySelectorAll('.tab-btn');
+  const tabContents = gallerySection.querySelectorAll('.tab-content');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      tabContents.forEach(content => content.classList.remove('active'));
+      const target = gallerySection.querySelector(`#${btn.dataset.tab}`);
+      if (target) target.classList.add('active');
+    });
   });
 });
+
 </script>
 
-  
+
+
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE (STICKY) -->
+    <aside class="overview-right">
+
+      <!-- FORM -->
+      <div class="form-box">
+        <h3>Enquire Now</h3>
+        <form>
+          <input placeholder="Your Name">
+          <input placeholder="Your Email">
+          <input placeholder="Phone Number">
+          <input placeholder="Message">
+          <button>Submit →</button>
+        </form>
+      </div>
+
+      <!-- CONTACT BOX (FORM KEELA) -->
+      <div class="contact-box">
+  <h4>Planning Us Visit</h4>
+ <h3>Chennai </h3>
+  <p class="contact-address">
+    <i class="fas fa-map-marker-alt"></i>
+  ADVP Business Ventures Pvt Ltd,<br>
+No. 26, 3B, 3rd Floor,<br>
+Jamal Fazal Chambers, Greams Road,<br>
+Thousand Lights, Chennai - 600006
+  </p>
+
+  <p>
+    <i class="fas fa-phone-alt marka_icon"></i>
+    <a href="tel:917200358161">+91 72003 58161</a>
+  </p>
+<h3>Bangalore</h3>
+<p class="contact-address">
+    <i class="fas fa-map-marker-alt"></i>
+    ADVP Business Ventures Pvt Ltd,<br> No. 72-73, 1st Floor, Gold Tower,<br>Residency Road, Bangalore - 560025
+  </p>
+  <p>
+    <i class="fas fa-phone-alt marka_icon"></i>
+    <a href="tel:917353511919">+91 73535 11919</a>
+  </p>
+</div>
+
+
+    </aside>
+
+  </div>
+</section>
+   
   
 
 <!-- Our Property Section Start -->
@@ -1043,7 +1000,6 @@ document.querySelectorAll('.flip-box').forEach(box => {
     </div>
     <!-- Our Property Section End -->
 </div>    
-
 <!-- Our Clients Section Start -->
  
 <section class="our-clients-section">
@@ -1081,72 +1037,6 @@ document.querySelectorAll('.flip-box').forEach(box => {
     </div>
   </div>
 </section>
-
-<style>
-/* ===== Our Clients Section ===== */
-.our-clients-section {
-  padding: 60px 20px;
-  background: #fff;
-}
-
-/* Grid layout with 4 columns */
-.clients-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 2px solid #bc3734; /* outer border */
-}
-
-.client-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-left: 1px solid #bc3734;
-  border-top: 1px solid #bc3734;
-  padding: 20px;
-  background: #fff;
-  transition: transform 0.3s ease;
-}
-
-.client-box:hover {
-  transform: scale(1.05);
-  border: 1px solid #bc3734;
-}
-
-/* Remove left border for first column */
-.client-box:nth-child(4n+1) {
-  border: 1px solid #bc3734;
-}
-
-/* Remove top border for first row */
-.client-box:nth-child(-n+4) {border: 1px solid  #bc3734;}
-
-.client-box img {
-  max-width: 100%;
-  max-height: 100px;
-  object-fit: cover;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .clients-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .clients-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .clients-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
-
   
 <!-- Page Projects Start -->
 <div class="page-project py-5">
@@ -1484,233 +1374,5 @@ Thousand Lights, Chennai - 600006</p>
     <script src="js/wow.min.js" defer></script>
     <!-- Main Custom js file -->
     <script src="js/function.js" defer></script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 </html>
