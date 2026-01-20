@@ -11,7 +11,25 @@
   height: 100%;
   object-fit: cover;
 }
+/* ✅ Mobile fix */
+@media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+  }
 
+  .hero-video {
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    background: #000;
+  }
+  /* ===== Counting Section ===== */
+.counting-section {
+  margin-top: -332px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+}
 /* ===== Counting Section ===== */
 .counting-section {
   background: #fff;
