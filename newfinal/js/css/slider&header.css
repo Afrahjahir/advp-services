@@ -1,0 +1,125 @@
+.topbar {
+  background-color: #336eb1;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 14px;
+}
+.topbar i {
+  margin-right: 6px;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+.main header{
+
+}
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+}
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.mobile-nav a {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #333;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+.hero-slide {
+  position: relative;
+}
+.hero-slide img {
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-pagination-bullet {
+  background-color: #fff;
+}
+
+  .social-icons a {
+    color: #d41e26;
+    font-size: 16px;
+    margin-left: 12px;
+    transition: 0.3s;
+  }
+
+  .social-icons a:hover {
+    color:#25352f;
+  }
+.header-sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background: transparent;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeDown 0.6s ease forwards;
+    }
+
+    /* On scroll: background and logo resize */
+    .header-sticky.scrolled {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-sticky .navbar-brand img {
+      transition: width 0.3s ease;
+    }
+
+    .header-sticky.scrolled .navbar-brand img {
+      width: 150px;
+    }
+
+    /* Entry animation */
+    @keyframes fadeDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Menu link hover effect */
+    .navbar-nav .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: #336eb1;
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu icon placeholder */
+    .navbar-toggle {
+      width: 30px;
+      height: 25px;
+      background: url('hamburger-icon.svg') no-repeat center;
+      background-size: contain;
+    }
