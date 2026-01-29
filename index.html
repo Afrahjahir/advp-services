@@ -183,8 +183,8 @@ a{
 /* Container in middle right of screen */
 .floating-buttons {
   position: fixed;
-  top: 50%;
-  right: 20px;
+  top: 68%;
+  right: 10px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -194,8 +194,8 @@ a{
 
 /* Button style */
 .floating-buttons .btn {
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: #023E7D;
   display: flex;
@@ -211,8 +211,8 @@ a{
 
 /* Icons */
 .floating-buttons img {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 25px;
 }
 
 /* Mobile adjustments */
@@ -222,8 +222,8 @@ a{
     gap: 12px;
   }
   .floating-buttons .btn {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: #023E7D;
     display: flex;
@@ -232,6 +232,11 @@ a{
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     transition: transform 0.3s;
 }
+.floating-buttons img {
+  width: 15px;
+  height: 20px;
+}
+
 }
 </style>
 
@@ -344,22 +349,28 @@ a{
   <a href="#">Contact Us</a>
 </div> -->
 
-<!-- Hero Section with Video -->
-<section class="hero-section">
+<!-- ===== DESKTOP HERO ===== -->
+<section class="hero-section hero-desktop">
   <video autoplay muted loop playsinline class="hero-video">
     <source src="/images/Advpimages/advp banner video.mp4" type="video/mp4">
   </video>
 </section>
+<!-- ===== MOBILE HERO ===== -->
+<section class="hero-section hero-mobile">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="/images/Advpimages/advp banner mobile.mp4" type="video/mp4">
+  </video>
+</section>
+
 
 <!-- Counting Section (Hero KEELA THANIYA) -->
 <section class="counting-section">
   <div class="count-container">
 
     <!-- 1st box - Text -->
-    <div class="count-box text-box">
-      <p>
-        Build Your Dream Home in the Land of Prosperity
-      </p>
+     <div class="count-box">
+      <h3><span class="counter" data-target="580">500</span>+</h3>
+      <p>Happy customers</p>
     </div>
 
     <!-- 2nd box -->
@@ -376,7 +387,7 @@ a{
 
     <!-- 4th box -->
     <div class="count-box">
-      <h3><span class="counter" data-target="80">80</span>% Bank Lonas</h3>
+      <h3><span class="counter" data-target="80">80</span>% Bank Loans</h3>
       <p>Easy Financing Available</p>
     </div>
 
@@ -427,10 +438,93 @@ observer.observe(document.querySelector('.counting-overlay'));
           <h2> Where Investment Meets Lifestyle  <br> - <span> ADVP Business Ventures</span></h2>
         </div>
 
-      <div class="left-grid">
-        <div class="left-image">
-          <img src="/images/South-Indias-2.png">
-        </div>
+     <div class="left-grid">
+  <div class="left-image animate-on-scroll">
+<video autoplay muted loop playsinline preload="metadata">
+  <source src="/images/Advpimages/most.mp4" type="video/mp4">
+  <source src="/images/Advpimages/most.webm" type="video/webm">
+</video>
+
+</div>
+        <style>
+         
+  .left-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+ .left-grid {
+  overflow: hidden;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+
+/* animation class (added by JS on scroll) */
+.roll-in-left {
+  -webkit-animation: roll-in-left 0.6s ease-out both;
+          animation: roll-in-left 0.6s ease-out both;
+}
+
+@-webkit-keyframes roll-in-left {
+  0% {
+    -webkit-transform: translateX(-800px) rotate(-540deg);
+            transform: translateX(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes roll-in-left {
+  0% {
+    -webkit-transform: translateX(-800px) rotate(-540deg);
+            transform: translateX(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+.roll-in-left {
+  animation-delay: 0.2s;
+}
+
+     </style>
+
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".animate-on-scroll");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("roll-in-left");
+          observer.unobserve(entry.target); // run once
+        }
+      });
+    },
+    {
+      threshold: 0.3 // 30% visible = trigger
+    }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+});
+</script>
+
 
         <div class="left-text">
           <!-- <p class="location">📍 Bangalore & Chennai</p> -->
@@ -441,14 +535,14 @@ observer.observe(document.querySelector('.counting-overlay'));
             <div class="info-card"><p>Price</p><h3>29 Lakhs*</h3>Onwards</div>
           </div>
 
-          <p class="desc">
+          <p class="desc" style="text-align: justify;">
         ADVP is a leading O2O (Online-to-Offline) second landlord platform based in Bangalore. As a trusted prop tech company, we specialize in professional management of housing asset for individual apartments, villas, and houses.
 
 Since our incorporation fromApril 2023, we have grown steadily to manage over 100+ residential real estate properties. Our platform proudly serves clients in maintaining their property and providing hassle free transactions, emphasizing our dedication to client satisfaction and building trust.
           </p>
 
           <div class="btn-group">
-            <a class="gold-btn" href="#">Read More</a>
+            <a class="gold-btn" href="/about/">Read More</a>
             <!-- <a class="gold-btn">⬇ Master Layout</a> -->
           </div>
         </div>
@@ -478,7 +572,7 @@ Since our incorporation fromApril 2023, we have grown steadily to manage over 10
         <div class="flip-front">
           <img src="/images/new service/1.webp">
           <div class="front-content">
-            <img class="front-icon marka_image1" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+            <img class="front-icon marka_image1" src="/images/new service/real estate.png">
             <h3>Real Estate</h3>
           </div>
         </div>
@@ -494,7 +588,7 @@ Since our incorporation fromApril 2023, we have grown steadily to manage over 10
         <div class="flip-front">
           <img src="/images/new service/2.webp">
           <div class="front-content">
-            <img class="front-icon marka_image1" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+            <img class="front-icon marka_image1" src="/images/new service/home loan.png">
             <h3>Home Loans</h3>
           </div>
         </div>
@@ -510,7 +604,7 @@ Since our incorporation fromApril 2023, we have grown steadily to manage over 10
         <div class="flip-front">
           <img src="/images/new service/3.webp">
           <div class="front-content">
-            <img class="front-icon marka_image1" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+            <img class="front-icon marka_image1" src="/images/new service/construction.png">
             <h3>Construction services</h3>
           </div>
         </div>
@@ -525,7 +619,7 @@ Since our incorporation fromApril 2023, we have grown steadily to manage over 10
         <div class="flip-front">
           <img src="/images/new service/4.webp">
           <div class="front-content">
-            <img class="front-icon marka_image1" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+            <img class="front-icon marka_image1" src="/images/new service/Property Management.png">
             <h3>Property Management</h3>
           </div>
         </div>
@@ -540,7 +634,7 @@ Since our incorporation fromApril 2023, we have grown steadily to manage over 10
         <div class="flip-front">
           <img src="/images/new service/5.webp">
           <div class="front-content">
-            <img class="front-icon marka_image1" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+            <img class="front-icon marka_image1" src="/images/new service/Buy Properties.png">
             <h3>Buy Properties</h3>
           </div>
         </div>
@@ -555,7 +649,7 @@ Since our incorporation fromApril 2023, we have grown steadily to manage over 10
         <div class="flip-front">
           <img src="/images/new service/6.webp">
           <div class="front-content">
-            <img class="front-icon marka_image1" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+            <img class="front-icon marka_image1" src="/images/new service/sell Properties.png">
             <h3>Sell Properties</h3>
           </div>
         </div>
@@ -569,92 +663,212 @@ Since our incorporation fromApril 2023, we have grown steadily to manage over 10
 
   </div>
 </section>
-<section class="project-gallery-section">
-  <div class="gallery-left">
-    <!-- Title -->
-   <div class="row section-row">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                          <!-- <h3 class="wow fadeInUp">Gallery</h3> -->
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Gallery</span></h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
+<style>
+  /* =========================
+   BASE RESET
+========================= */
+.flip-box {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
 
-    <!-- Tabs -->
-    <div class="gallery-tabs">
-      <button class="tab-btn active" data-tab="photos">Photos</button>
-      <button class="tab-btn" data-tab="videos">Videos</button>
+/* =========================
+   DESKTOP ANIMATION
+========================= */
+@media (min-width: 769px) {
+  .flip-box.in-view {
+    animation: tilt-in-fwd-tr 0.9s
+      cubic-bezier(0.250, 0.460, 0.450, 0.940)
+      forwards;
+  }
+}
+
+/* =========================
+   MOBILE SAFE ANIMATION
+========================= */
+@media (max-width: 768px) {
+  .flip-box {
+    transform: translateY(30px);
+  }
+
+  .flip-box.in-view {
+    animation: mobile-fade-up 0.6s ease-out forwards;
+  }
+}
+
+/* =========================
+   STAGGER EFFECT
+========================= */
+.flip-box:nth-child(1) { animation-delay: 0.1s; }
+.flip-box:nth-child(2) { animation-delay: 0.2s; }
+.flip-box:nth-child(3) { animation-delay: 0.3s; }
+.flip-box:nth-child(4) { animation-delay: 0.4s; }
+.flip-box:nth-child(5) { animation-delay: 0.5s; }
+.flip-box:nth-child(6) { animation-delay: 0.6s; }
+
+/* =========================
+   KEYFRAMES
+========================= */
+@keyframes mobile-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tilt-in-fwd-tr {
+  0% {
+    transform: rotateY(15deg) rotateX(25deg)
+      translate(200px, -200px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0) rotateX(0)
+      translate(0, 0);
+    opacity: 1;
+  }
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".flip-box");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  cards.forEach(card => observer.observe(card));
+});
+</script>
+
+<section class="pg-project-gallery">
+  <div class="pg-container">
+
+    <!-- Title -->
+    <div class="section-title">
+      <h3>Our Gallery</h3>
+      <h2>Thoughtfully planned <span>spaces brought to life</span></h2>
     </div>
 
-    <!-- CONTENT -->
-    <div class="gallery-content">
+    <!-- Tabs -->
+    <div class="pg-tabs">
+      <button class="pg-tab-btn active" data-tab="pg-photos">Photos</button>
+      <button class="pg-tab-btn" data-tab="pg-videos">Videos</button>
+    </div>
 
-      <!-- PHOTOS -->
-      <div class="tab-content active" id="photos">
-        <div class="gallery-grid">
-          <div class="gallery-card"><img src="/images/property/1st%20floor/image3.jpg" alt=""></div>
-          <div class="gallery-card"><img src="/images/property/1st%20floor/image2.jpg" alt=""></div>
-          <div class="gallery-card"><img src="/images/property/1st%20floor/image3.jpg" alt=""></div>
-          <!-- <div class="gallery-card"><img src="/images/property/1st%20floor/image5.jpg" alt=""></div>
-          <div class="gallery-card"><img src="/images/property/1st%20floor/image6.jpg" alt=""></div> -->
+    <!-- Content -->
+    <div class="pg-tab-content-wrapper">
+
+      <!-- Photos -->
+      <div class="pg-tab-content active" id="pg-photos">
+        <div class="pg-slider">
+          <button class="pg-arrow pg-prev">‹</button>
+          <div class="pg-track">
+            <div class="pg-card"><img src="/images/Advpimages/homepage_gallery_1.webp" alt=""></div>
+            <div class="pg-card"><img src="/images/Advpimages/homepage_gallery_2.webp" alt=""></div>
+            <div class="pg-card"><img src="/images/Advpimages/homepage_gallery_3.webp" alt=""></div>
+              <div class="pg-card"><img src="/images/Advpimages/homepage_gallery_4.webp" alt=""></div>
+                <div class="pg-card"><img src="/images/Advpimages/homepage_gallery_5.webp" alt=""></div>
+            
+          </div>
+          <button class="pg-arrow pg-next">›</button>
         </div>
       </div>
 
-      <!-- VIDEOS -->
-     <!-- VIDEOS -->
-<div class="tab-content" id="videos">
-  <div class="gallery-grid">
-    <div class="gallery-card video-card">
-     <iframe width="356" height="634" src="https://www.youtube.com/embed/REEAULnhzeo" title="3BHK East Facing Home for Sale in Electronic City, Bangalore" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <!-- <span class="more-videos">MORE VIDEOS</span> -->
-    </div>
-
-    <div class="gallery-card video-card">
-     <iframe width="356" height="634" src="https://www.youtube.com/embed/znaZeOiP8Vw" title="Property for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <!-- <span class="more-videos">MORE VIDEOS</span> -->
-    </div>
-
-    <div class="gallery-card video-card">
-   <iframe width="356" height="634" src="https://www.youtube.com/embed/LucntLwRZXI" title="Property management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <!-- <span class="more-videos">MORE VIDEOS</span> -->
-    </div>
-
-    
-  </div>
-</div>
-
+      <!-- Videos -->
+      <div class="pg-tab-content" id="pg-videos">
+        <div class="pg-slider">
+          <button class="pg-arrow pg-prev">‹</button>
+          <div class="pg-track">
+            <div class="pg-card">
+              <iframe src="https://www.youtube.com/embed/REEAULnhzeo" allowfullscreen></iframe>
+            </div>
+            <div class="pg-card">
+              <iframe src="https://www.youtube.com/embed/znaZeOiP8Vw" allowfullscreen></iframe>
+            </div>
+          </div>
+          <button class="pg-arrow pg-next">›</button>
+        </div>
+      </div>
 
     </div>
   </div>
 </section>
 <script>
+document.addEventListener('DOMContentLoaded', function () {
 
-const gallerySections = document.querySelectorAll('.project-gallery-section');
+  // Tabs
+  document.querySelectorAll('.pg-project-gallery').forEach(section => {
+    const tabs = section.querySelectorAll('.pg-tab-btn');
+    const contents = section.querySelectorAll('.pg-tab-content');
 
-gallerySections.forEach(gallerySection => {
-  const tabBtns = gallerySection.querySelectorAll('.tab-btn');
-  const tabContents = gallerySection.querySelectorAll('.tab-content');
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      tabContents.forEach(content => content.classList.remove('active'));
-      const target = gallerySection.querySelector(`#${btn.dataset.tab}`);
-      if (target) target.classList.add('active');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        const target = section.querySelector('#' + tab.dataset.tab);
+        target.classList.add('active');
+        target.querySelectorAll('.pg-track').forEach(track => { track.style.transform = 'translateX(0px)'; });
+      });
     });
   });
+
+  // Slider
+  document.querySelectorAll('.pg-slider').forEach(slider => {
+    const track = slider.querySelector('.pg-track');
+    const cards = slider.querySelectorAll('.pg-card');
+    const prev = slider.querySelector('.pg-prev');
+    const next = slider.querySelector('.pg-next');
+
+    let index = 0;
+    let interval = null;
+
+    function cardWidth() {
+  return cards[0].offsetWidth;
+}
+ // gap included
+    function slide() { track.style.transform = `translateX(-${index * cardWidth()}px)`; }
+
+    // Single click
+    next.addEventListener('click', () => { if (index < cards.length - 1) { index++; slide(); } });
+    prev.addEventListener('click', () => { if (index > 0) { index--; slide(); } });
+
+    // Continuous hold (pointer events)
+    function startScroll(dir) {
+      stopScroll();
+      interval = setInterval(() => {
+        if (dir === 'next') { index = (index + 1 >= cards.length) ? 0 : index + 1; }
+        if (dir === 'prev') { index = (index - 1 < 0) ? cards.length - 1 : index - 1; }
+        slide();
+      }, 250);
+    }
+    function stopScroll() { if (interval) clearInterval(interval); interval = null; }
+
+    next.addEventListener('pointerdown', () => startScroll('next'));
+    prev.addEventListener('pointerdown', () => startScroll('prev'));
+    document.addEventListener('pointerup', stopScroll);
+
+    // Resize
+    window.addEventListener('resize', () => { index = 0; slide(); });
+  });
+
 });
-
 </script>
-
-
-
-
       </div>
 
     </div>
@@ -707,7 +921,52 @@ Thousand Lights, Chennai - 600006
   </div>
 </section>
    
-  
+  <script
+  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"
+  type="module">
+</script>
+<div class="left-lottie">
+  <dotlottie-wc
+    src="https://lottie.host/f4dbba1b-2daf-4195-ba40-f8fe17e7bc51/ZxAEgD5oHD.lottie"
+    autoplay
+    loop>
+  </dotlottie-wc>
+</div>
+<style>
+  .our-property {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left Lottie placement */
+.left-lottie {
+  position: absolute;
+  left: 40px;
+  top: 52%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.left-lottie dotlottie-wc {
+  width: 320px;
+  height: 320px;
+}
+
+/* Ensure content stays above animation */
+.our-property .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide lottie on mobile */
+@media (max-width: 991px) {
+  .left-lottie {
+    display: none;
+  }
+}
+
+</style>
 
 <!-- Our Property Section Start -->
     <div class="our-property" style="background: url(images/Advpimages/Bg_ADVP.webp);
@@ -748,7 +1007,7 @@ Thousand Lights, Chennai - 600006
                     </li>
                 </ul>
             </div>
-
+              
             <!-- Tab Content -->
             <div class="tab-content mt-4">
                 <!-- Vision Tab -->
@@ -830,10 +1089,155 @@ Thousand Lights, Chennai - 600006
     </div>
     <!-- Our Property Section End -->
 </div>    
+
+<section class="prop-wrapper">
+
+  <!-- ===== Top Banner ===== -->
+  <div class="prop-banner">
+    <div>
+      <h2>Your Property, Our Platform</h2>
+      <p>List for Free & Attract Genuine Buyers on 360Property</p>
+    </div>
+    <button class="prop-banner-btn"><a href="/find-a-property/" > View All </a></button>
+  </div>
+
+  <!-- ===== Property Section ===== -->
+  <div class="prop-section">
+
+    <div class="prop-left">
+      <span class="prop-tag">Top Properties for You</span>
+      <h3>Comfort Living Solution</h3>
+
+      <div class="prop-tabs">
+        <button class="prop-tab-btn active" data-type="all">All Properties</button>
+        <!-- <button class="prop-tab-btn" data-type="sale">For Sale</button>
+        <button class="prop-tab-btn" data-type="rent">For Rent</button> -->
+      </div>
+    </div>
+
+    <div class="prop-slider-wrap">
+      <!-- <button class="prop-nav prop-prev">❮</button> -->
+
+      <div class="prop-slider" id="propSlider">
+        <div class="prop-card" data-type="Rent">
+          <img src="images/property/property1.jpg">
+          <h4><a href="/find-a-property/chennai/rent/property/"> Rental Property </a></h4>
+          <div class="prop-meta">
+      <span><i class="fa fa-bed"></i> 3 BHK</span>
+      <span><i class="fa fa-tag"></i> ₹60,000 (Negotiable)</span>
+      <span><i class="fa fa-map-marker"></i> Chennai</span>
+      <span><i class="fa fa-car"></i> Double Car Parking</span>
+    </div>
+        </div>
+
+        <div class="prop-card" data-type="sale">
+          <img src="/images/property/2nd floor/image3.jpg">
+          <h4><a href="/find-a-property/bangalore/sale/1stfloor/property/"> East Facing 1st Floor </a></h4>
+    <div class="prop-meta">
+      <span><i class="fa fa-bed"></i> 3 BHK</span>
+      <span><i class="fa fa-tag"></i> Starting from 65 Lakhs</span>
+      <span><i class="fa fa-map-marker"></i>Electronics City,Bangalore</span>
+      <span><i class="fa fa-car"></i>For Sale</span>
+    </div>
+        </div>
+
+        <div class="prop-card" data-type="sale">
+          <img src="/images/property/3rd floor/image5.jpg">
+          <h4><a href="/find-a-property/bangalore/sale/2ndfloor/property/">East Facing 2nd Floor</a> </h4>
+         <div class="prop-meta">
+      <span><i class="fa fa-bed"></i> 2 BHK</span>
+      <span><i class="fa fa-tag"></i>  Starting from 65 Lakhs</span>
+     <span><i class="fa fa-map-marker"></i>Electronics City,Bangalore</span>
+      <span><i class="fa fa-car"></i>For Sale</span>
+    </div>
+        </div>
+
+        
+
+      <!-- <button class="prop-nav prop-next">❯</button> -->
+    </div>
+
+  </div>
+
+  <div class="prop-dots" id="propDots"></div>
+
+</section>
+
+
+<script>
+const propSlider = document.getElementById("propSlider");
+let propCards = document.querySelectorAll(".prop-card");
+const propPrev = document.querySelector(".prop-prev");
+const propNext = document.querySelector(".prop-next");
+const propTabs = document.querySelectorAll(".prop-tab-btn");
+
+let propIndex = 0;
+let propVisible = 3;
+
+function propUpdateVisible() {
+  if (window.innerWidth < 500) propVisible = 1;
+  else if (window.innerWidth < 900) propVisible = 2;
+  else propVisible = 3;
+}
+propUpdateVisible();
+
+function propMoveTo(i) {
+  propIndex = i;
+  const cardWidth = propCards[0].getBoundingClientRect().width + 25;
+  propSlider.style.transform = `translateX(-${i * propVisible * cardWidth}px)`;
+}
+
+if (propNext && propPrev) {
+  propNext.addEventListener("click", () => {
+    const max = Math.ceil(propCards.length / propVisible) - 1;
+    propIndex = propIndex >= max ? 0 : propIndex + 1;
+    propMoveTo(propIndex);
+  });
+
+  propPrev.addEventListener("click", () => {
+    const max = Math.ceil(propCards.length / propVisible) - 1;
+    propIndex = propIndex <= 0 ? max : propIndex - 1;
+    propMoveTo(propIndex);
+  });
+}
+
+window.addEventListener("resize", () => {
+  propUpdateVisible();
+  propMoveTo(0);
+});
+
+/* Auto slide desktop only */
+setInterval(() => {
+  if (window.innerWidth > 900) propNext?.click();
+}, 4000);
+
+/* ===== Tabs Filter ===== */
+propTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    propTabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    const type = tab.dataset.type;
+    const allCards = document.querySelectorAll(".prop-card");
+
+    allCards.forEach(card => {
+      card.style.display =
+        type === "all" || card.dataset.type === type ? "block" : "none";
+    });
+
+    propCards = document.querySelectorAll(".prop-card:not([style*='display: none'])");
+    propMoveTo(0);
+  });
+});
+</script>
+<script
+  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"
+  type="module"
+></script>
+
 <!-- Our Clients Section Start -->
- 
-<section class="our-clients-section">
-  <div class="row section-row">
+<section class="logo-carousel-wrapper mt-100 marka">
+<div class="row section-row">
                 <div class="col-lg-12">
                     <!-- Section Title Start -->
                     <div class="section-title">
@@ -843,277 +1247,222 @@ Thousand Lights, Chennai - 600006
                     <!-- Section Title End -->
                 </div>
             </div>
-  <div class="container">
-   
+  <div class="logo-carousel">
+    <div class="logo-slide-track">
+      <!-- Original logos -->
+      <div class="logo-slide"><img src="images/clients/c_ag.webp" alt="Logo 1" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_bg.webp" alt="Logo 2" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_bh.webp" alt="Logo 3" loading="lazy"></div>
+      <!-- <div class="logo-slide"><img src="images/clients/c_da.webp" alt="Logo 4"></div> -->
+      <div class="logo-slide"><img src="images/clients/c_dell.webp" alt="Logo 5" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_gp.webp" alt="Logo 6" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_gs.webp" alt="Logo 7" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_jc.webp" alt="Logo 8" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_mh.webp" alt="Logo 9" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_pg.webp" alt="Logo 10" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_pk.webp" alt="Logo 11" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_rc.webp" alt="Logo 12" loading="lazy"></div>
 
-    <div class="clients-grid">
-      <div class="client-box"><img src="images/clients/c_ag.webp" alt="DC Clinic"></div>
-      <div class="client-box"><img src="images/clients/c_bg.webp" alt="Greenfly"></div>
-      <div class="client-box"><img src="images/clients/c_bh.webp" alt="UT Arlington"></div>
-      <div class="client-box"><img src="images/clients/c_da.webp" alt="JAMS"></div>
-      <div class="client-box"><img src="images/clients/c_dell.webp" alt="SKRE"></div>
-
-      <div class="client-box"><img src="images/clients/c_gp.webp" alt="Oor Sandhai"></div>
-      <div class="client-box"><img src="images/clients/c_gs.webp" alt="Melon"></div>
-      <div class="client-box"><img src="images/clients/c_jc.webp" alt="ICONGEN"></div>
-      <div class="client-box"><img src="images/clients/c_mh.webp" alt="Docs"></div>
-      <div class="client-box"><img src="images/clients/c_pg.webp" alt="Skin Grid"></div>
-
-      <div class="client-box"><img src="images/clients/c_pk.webp" alt="Swift Clinic"></div>
-      <div class="client-box"><img src="images/clients/c_rc.webp" alt="WEA"></div>
-      <!-- <div class="client-box"><img src="https://via.placeholder.com/150x60?text=Kanaga+Hospital" alt="Kanaga Hospital"></div>
-      <div class="client-box"><img src="https://via.placeholder.com/150x60?text=DAC" alt="DAC"></div>
-      <div class="client-box"><img src="https://via.placeholder.com/150x60?text=Anton" alt="Anton"></div> -->
+      <!-- Duplicate logos for seamless loop -->
+      <div class="logo-slide"><img src="images/clients/c_ag.webp" alt="Logo 1" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_bg.webp" alt="Logo 2" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_bh.webp" alt="Logo 3" loading="lazy"></div>
+     <div class="logo-slide"><img src="images/clients/c_dell.webp" alt="Logo 5" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_gp.webp" alt="Logo 6" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_gs.webp" alt="Logo 7" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_jc.webp" alt="Logo 8" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_mh.webp" alt="Logo 9" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_pg.webp" alt="Logo 10" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_pk.webp" alt="Logo 11" loading="lazy"></div>
+      <div class="logo-slide"><img src="images/clients/c_rc.webp" alt="Logo 12" loading="lazy"></div>
     </div>
   </div>
 </section>
+
+
+ <!-- Intro Video Section Start -->
+<!-- Video Background Section -->
+<section class="bg-video-section">
   
-<!-- Page Projects Start -->
-<div class="page-project py-5">
-    <div class="container">
-       <div class="row section-row">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                          <h3 class="wow fadeInUp">Our Properties</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Top Properties <span>for You</span></span></h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-        
-        <div class="row">
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="images/Advpimages/advp-CTA.mp4" type="video/mp4">
+  </video>
 
-            <!-- Project Item Start -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-item wow fadeInUp">
+  <div class="bg-video-content">
+    <h3>What We Achieve</h3>
+    <h2>What People Talking About Building</h2>
+    <p>
+      We empower our clients with expert real estate solutions, guided by a global mindset and a collaborative approach.
+    </p>
+  </div>
 
-                    <!-- Image Box -->
-                    <div class="project-img mb-3" style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden;">
-                        <a href="/contact/" data-cursor-text="View">
-                            <figure class="image-anime m-0">
-                                <img src="images/property/property1.jpg" alt="" style="width: 100%; display: block;" loading="lazy">
-                            </figure>
-                        </a>
-                    </div>
+</section>
 
-                    <!-- Content Box -->
-                    <div class="project-content p-3" style="border: 1px solid #ddd; border-radius: 10px;">
-                        <h5 class="mb-2"><a href="/find-a-property/chennai/rent/property/"
-                           style="text-decoration: none; color: #000;">Rental Property </a></h5>
-                        <div class="property-info d-flex gap-3 text-muted" style="font-size: 14px;">
-                            <div><i class="fa fa-bed me-1"></i>3 BHK</div>
-                            <div><i class="fa fa-tag me-1"></i>60,000 (Negotiable)</div>
-                            <div><i class="fa fa-location me-1"></i>Chennai</div>
-                            <div><i class="fa fa-car me-1"></i>Double Car Parking</div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-            <!-- Project Item End -->
-
-            <!-- Repeat more project cards as needed -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
-
-                    <div class="project-img mb-3" style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden;">
-                        <a href="/find-a-property/bangalore/sale/1stfloor/property/" data-cursor-text="View">
-                            <figure class="image-anime m-0">
-                                <img src="/images/property/2nd floor/image3.jpg" alt="" style="width: 100%; display: block;" loading="lazy">
-                            </figure>
-                        </a>
-                    </div>
-
-                    <div class="project-content p-3" style="border: 1px solid #ddd; border-radius: 10px;">
-                        <h5 class="mb-2"><a href="/find-a-property/bangalore/sale/1stfloor/property/" style="text-decoration: none; color: #000;">East Facing 1st Floor</a></h5>
-                        <div class="property-info d-flex gap-3 text-muted" style="font-size: 14px;">
-                            <div><i class="fa fa-bed me-1"></i>3</div>
-                          <div><i class="fa fa-tag me-1"></i>Starting from 65 Lakhs</div>
-                            <div><i class="fa fa-location me-1"></i>Electronics City,Bangalore</div>
-                            <div><i class="fa-solid fa-tag"></i> For Sale</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Add more blocks as needed -->
-              <!-- Project Item Start -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-item wow fadeInUp">
-
-                    <!-- Image Box -->
-                    <div class="project-img mb-3" style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden;">
-                        <a href="/contact//find-a-property/bangalore/sale/2ndfloor/property/" data-cursor-text="View">
-                            <figure class="image-anime m-0">
-                                <img src="/images/property/3rd floor/image5.jpg" alt="" style="width: 100%; display: block;" loading="lazy">
-                            </figure>
-                        </a>
-                    </div>
-
-                    <!-- Content Box -->
-                     <div class="project-content p-3" style="border: 1px solid #ddd; border-radius: 10px;">
-                        <h5 class="mb-2"><a href="/find-a-property/bangalore/sale/2ndfloor/property/" style="text-decoration: none; color: #000;">East Facing 2nd Floor</a></h5>
-                        <div class="property-info d-flex gap-3 text-muted" style="font-size: 14px;">
-                            <div><i class="fa fa-bed me-1"></i>2</div>
-                          <div><i class="fa fa-tag me-1"></i>Starting from 65 Lakhs</div>
-                            <div><i class="fa fa-location me-1"></i>Electronics City,Bangalore</div>
-                            <div><i class="fa-solid fa-tag"></i> For Sale</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!-- Project Item End -->
- <div class="cta-btn wow fadeInUp" data-wow-delay="0.25s">
-                            <a href="/find-a-property/" class="btn-default btn-highlighted">View All Properties</a>
-                        </div>
+<!-- Our Testimonial Section Start -->
+   <div class="our-testimonial">
+  <div class="container">
+    <div class="row section-row">
+      <div class="col-lg-12">
+        <!-- Section Title Start -->
+        <div class="section-title">
+          <h3 class="wow fadeInUp">testimonials</h3>
+          <h2 class="text-anime-style-2" data-cursor="-opaque">
+            What Our <span>Client Say</span>
+          </h2>
         </div>
+        <!-- Section Title End -->
+      </div>
     </div>
+
+    <div class="row align-items-center">
+
+      <!-- ===== LEFT : YouTube Video ===== -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="testimonial-video-box">
+          <iframe width="610" height="315" src="https://www.youtube.com/embed/U-4WSL2abVI?si=GwdWNnDPOytj6W9t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- ===== RIGHT : Existing Testimonials (UNCHANGED) ===== -->
+      <div class="col-lg-6">
+        <div class="testimonial-slider">
+          <div class="swiper" style="background-color: none;">
+            <div class="swiper-wrapper" data-cursor-text="Drag">
+
+              <!-- Testimonial Slide Start -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="testimonial-content">
+                    <p style="text-align:justify;">
+                      Working with ADVP Business Ventures was an absolute pleasure. Their team of dedicated professionals guided me through the entire home buying process with expertise and patience.
+                    </p>
+                  </div>
+                  <div class="author-info">
+                    <div class="author-image">
+                      <figure class="image-anime">
+                        <img src="images/author-1.jpg" alt="Testimonial_ADVP" loading="lazy">
+                      </figure>
+                    </div>
+                    <div class="author-content">
+                      <h3>Ramachandra.P</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Slide End -->
+
+              <!-- Testimonial Slide Start -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="testimonial-content">
+                    <p style="text-align:justify;">
+                      I was looking for a commercial space for my startup, and ADVP made the process seamless. They negotiated favorable lease terms on my behalf.
+                    </p>
+                  </div>
+                  <div class="author-info">
+                    <div class="author-image">
+                      <figure class="image-anime">
+                        <img src="images/author-1.jpg" alt="Testimonial_ADVP" loading="lazy">
+                      </figure>
+                    </div>
+                    <div class="author-content">
+                      <h3>Shalini S</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Slide End -->
+
+              <!-- Testimonial Slide Start -->
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="testimonial-content">
+                    <p style="text-align:justify;">
+                      I recently purchased my first home with ADVP's help. Their team guided me through every step, answering all my questions and helping me find the right property.
+                    </p>
+                  </div>
+                  <div class="author-info">
+                    <div class="author-image">
+                      <figure class="image-anime">
+                        <img src="images/author-1.jpg" alt="Testimonial_ADVP" loading="lazy">
+                      </figure>
+                    </div>
+                    <div class="author-content">
+                      <h3>Keerthi .M</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial Slide End -->
+
+            </div>
+
+            <div class="testimonial-btn">
+              <div class="testimonial-btn-prev"></div>
+              <div class="testimonial-btn-next"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
-<!-- Page Projects End -->
+<!----------->
+ <div class="container-fluid my-5">
+  <div class="row g-4">
+    <!-- Head Office – Bengaluru -->
+    <div class="col-lg-6 col-md-12">
+      <div class="map-responsive">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.049026297935!2d77.59967757588718!3d12.968714714939875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15e6b13118f7%3A0x4b26d62cd2545270!2sADVP%20Business%20Ventures%20Private%20Limited%20-%20Bangalore!5e0!3m2!1sen!2sus!4v1751112268703!5m2!1sen!2sus"
+          style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
 
+    <!-- Regional Office – Chennai -->
+    <div class="col-lg-6 col-md-12">
+      <div class="map-responsive">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.660019474337!2d80.25322127484294!3d13.05729948726602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526738ac702c3f%3A0x961a67fb3879b896!2sADVP%20Business%20Ventures%20Private%20Limited%20-%20Chennai!5e0!3m2!1sen!2sin!4v1765362209166!5m2!1sen!2sin"
+          style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHXB95HK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 
 <style>
-.property-info {
-    list-style: none;
-    padding: 0 15px 15px;
-    margin: 0;
-    display: inline;
-    display: flex;
-    flex-wrap: wrap;
-    /* align-items: center; */
-    /* gap: 18px; */
-    /* font-size: 14px; */
-    /* color: #444; */
-    align-content: space-between;
-    flex-direction: row;
-}
-.cta-btn {
-  display: flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center; /* centers vertically (optional) */
-}
-
-
-</style>
-  <!-- Intro Video Section Start -->
-    <div class="intro-video parallaxie" style="background: url(images/Advpimages/CTA%20Banner.webp);
-    height: 100%;
+  /* Make Google Maps responsive */
+  .map-responsive {
+    position: relative;
     width: 100%;
-    background-size: cover;" >
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 col-md-8">
-                    <!-- Section Title Start -->
-                    <div class="section-title dark-section">
-                        <h3 class="wow fadeInUp">What We Achieve</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">What People Talking About Building</h2>
-                    <p style="text-align: justify;">We empower our clients with expert real estate solutions, guided by a global mindset and a collaborative approach to building lasting value.</p>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+  }
 
-                
-            </div>
+  .map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
 
-           
-        </div>
-    </div>
-    <!-- Intro Video Section End -->
-<!-- Our Testimonial Section Start -->
-    <div class="our-testimonial">
-        <div class="container">
-            <div class="row section-row">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">testimonials</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">What Our  <span>Client Say</span></h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="row" style="justify-content: center;">               
-                <div class="col-lg-8">
-                    <div class="testimonial-slider">
-                        <div class="swiper" style="background-color: none;" >
-                            <div class="swiper-wrapper" data-cursor-text="Drag">
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-content">
-                                            <p style="text-align:justify;">Working with ADVP Business Ventures was an absolute pleasure. Their team of dedicated professionals guided me through the entire home buying process with expertise and patience. </p>
-                                        </div>
-                                        <div class="author-info">
-                                            <div class="author-image">
-                                                <figure class="image-anime">
-                                                    <img src="images/author-1.jpg" alt="Testimonial_ADVP" loading="lazy">
-                                                </figure>
-                                            </div>            
-                                            <div class="author-content">
-                                                <h3>Ramachandra.P</h3>
-                                                <!-- <p style="text-align:justify;">ukco - united kingdom co.</p> -->
-                                            </div>
-                                        </div>                                    
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-content">
-                                            <p style="text-align:justify;">I was looking for a commercial space for my startup, and ADVP made the process seamless. They negotiated favorable lease terms on my behalf.</p>
-                                        </div>
-                                        <div class="author-info">
-                                            <div class="author-image">
-                                                <figure class="image-anime">
-                                                    <img src="images/author-1.jpg" alt="Testimonial_ADVP" loading="lazy">
-                                                </figure>
-                                            </div>            
-                                            <div class="author-content">
-                                                <h3>Shalini S</h3>
-                                                <!-- <p style="text-align:justify;">Marketing manager</p> -->
-                                            </div>
-                                        </div>                                    
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->  
-                                  <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-content">
-                                            <p style="text-align:justify;"> I recently purchased my first home with ADVP's help. Their team guided me through every step, answering all my questions and helping me find the right property.</p>
-                                        </div>
-                                        <div class="author-info">
-                                            <div class="author-image">
-                                                <figure class="image-anime">
-                                                    <img src="images/author-1.jpg" alt="Testimonial_ADVP" loading="lazy">
-                                                </figure>
-                                            </div>            
-                                            <div class="author-content">
-                                                <h3>Keerthi .M</h3>
-                                                <!-- <p style="text-align:justify;">Marketing manager</p> -->
-                                            </div>
-                                        </div>                                    
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->                              
-                            </div>
-                            <div class="testimonial-btn">
-                                <div class="testimonial-btn-prev"></div>
-                                <div class="testimonial-btn-next"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
   <!-- Main Footer Section Start -->
 <footer class="footer">

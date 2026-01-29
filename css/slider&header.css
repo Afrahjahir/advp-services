@@ -417,6 +417,7 @@ header .container {
 .top-left i,
 .top-right i {
     margin-right: 6px;
+    transform: rotateY(-130deg);
 }
 
 .top-center span {
@@ -501,7 +502,8 @@ logo-carousel-wrapper {
 .logo-slide-track {
     display: flex;
     width: calc(250px * 24);
-    animation: 25s linear infinite scroll
+    animation: 25s linear infinite scroll;
+    margin-bottom: 40px;
 }
 
 .logo-slide {

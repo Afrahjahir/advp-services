@@ -1095,7 +1095,7 @@ header.main-header .header-sticky.active {
 }
 
 .page-faq-accordion,.property-tab-nav,.team-member-info,.testimonial-content,.vision-mission-nav {
-    margin-bottom: 60px
+    margin-bottom: 60px;
 }
 
 .property-tab-nav ul {
@@ -1142,7 +1142,10 @@ header.main-header .header-sticky.active {
 }
 
 .project-video-image,.property-tab-image,.testimonial-slider {
-    position: relative
+    position: relative;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 20px;
 }
 
 .property-tab-image::before {
@@ -1665,7 +1668,7 @@ header.main-header .header-sticky.active {
 
 .testimonial-slider .swiper {
     position: static;
-    margin: 0 120px;
+    margin: 0 10px;
     background: 0 0
 }
 
@@ -1699,7 +1702,7 @@ header.main-header .header-sticky.active {
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
-    background-color: #cc252c;
+    /* background-color: #cc252c; */
     border-radius: 50%;
     transition: .4s ease-in-out;
     z-index: 1
@@ -1723,10 +1726,10 @@ header.main-header .header-sticky.active {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 0px;
     right: 0;
-    font-size: 16px;
-    color: var(--white-color);
+    font-size: 10px;
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3122,6 +3125,10 @@ header.main-header .header-sticky.active {
     .our-appointment-box {
         padding: 50px
     }
+    section.logo-carousel-wrapper.mt-100.marka {
+    margin: 10px;
+    /* display: none; */
+}
 }
 
 @media only screen and (max-width: 991px) {
